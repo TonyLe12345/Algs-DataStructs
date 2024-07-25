@@ -1,16 +1,13 @@
-class Human
+#include "Player.h"
+#include <string>
+#pragma once
+
+class Human : public Player
 {
 private:
-    /* data */
+    
 public:
-    Human(/* args */);
-    ~Human();
+    Human(std::string name);
+    Human();
+    char makeMove();
 };
-
-Human::Human(/* args */)
-{
-}
-
-Human::~Human()
-{
-}
