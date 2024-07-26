@@ -8,9 +8,10 @@ Human::Human() : Player("Human") {
     
 }
 
-char Human::makeMove() {
+Move* Human::makeMove() {
     std::cout << "Enter move:";
-    std::cin >> move;
+    std::cin >> moveOption;
+    move->setMove(moveOption);
     return move;
 }
 

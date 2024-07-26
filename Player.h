@@ -1,13 +1,14 @@
 #include <string>
+#include "Move.h"
 #pragma once
 
 class Player
 {
 protected:
     std::string name;
-    char move;
+    Move* move;
 public:
     Player(std::string name);
-    virtual char makeMove() = 0;
+    virtual Move* makeMove();
     std::string getName();
 };
