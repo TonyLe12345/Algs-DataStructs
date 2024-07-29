@@ -1,8 +1,8 @@
 #include "Pirate.h"
 
 Pirate::Pirate() {
-    this->weakness.push_back("Monkey");
-    this->weakness.push_back("Robot");
+    this->weakness.push_back("Ninja");
+    this->weakness.push_back("Zombie");
 }
 
 std::string Pirate::getName() {

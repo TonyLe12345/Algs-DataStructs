@@ -1,8 +1,8 @@
 #include "Zombie.h"
 
 Zombie::Zombie() {
-    this->weakness.push_back("Pirate");
-    this->weakness.push_back("Monkey");
+    this->weakness.push_back("Robot");
+    this->weakness.push_back("Ninja");
 }
 
 std::string Zombie::getName() {
