@@ -7,12 +7,16 @@ private:
     /* data */
 public:
     Rock();
+    std::string getMove();
 };
 
 Rock::Rock() {
-    this->move = "Rock";
-    this->weakness.push_back("paper") ;
+    this->weakness.push_back("paper");
 }
+
+std::string Rock::getMove() {
+    return "Rock";
+};
 
 Rock::~Rock()
 {

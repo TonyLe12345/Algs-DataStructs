@@ -6,44 +6,22 @@ Referee::Referee()
 
 Player* Referee::refGame(Player* player1, Player* player2)
 {
-    char move1 = player1->makeMove();
-    char move2 = player2->makeMove();
+    Move* move1 = player1->makeMove();
+    Move* move2 = player2->makeMove();
 
-    if (move1 == 'R') {
-        if (move2 == 'R'){
-            return nullptr;
-        }
-        if (move2 == 'P'){
-            return player2;
-        }
-        if (move2 == 'S'){
-            return player1;
-        }
-    }
+    std::vector <std::string> player1Weakness = move1->getWeakness();
+    std::vector <std::string> player2Weakness = move2->getWeakness();
 
-    if (move1 == 'P') {
-        if (move2 == 'R'){
-            return player1;
-        }
-        if (move2 == 'P'){
-            return nullptr;
-        }
-        if (move2 == 'S'){
+    for (int i=0; i < player1Weakness.size(); i++) {
+        if (player1Weakness[i] == move2->getMove()) {
             return player2;
         }
     }
 
-    if (move1 == 'S') {
-        if (move2 == 'R'){
-            return player2;
-        }
-        if (move2 == 'P'){
+    for (int i=0; i < player2Weakness.size(); i++) {
+        if (player1Weakness[i] == move1->getMove()) {
             return player1;
         }
-        if (move2 == 'S'){
-            return nullptr;
-        }
     }
-    return nullptr;
 
 }

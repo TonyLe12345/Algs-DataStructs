@@ -18,4 +18,3 @@ Move* Human::makeMove() {
         this->move = new Rock;
         return move;
 }
-
