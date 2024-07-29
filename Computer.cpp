@@ -1,10 +1,10 @@
 #include "Computer.h"
 #include "Player.h"
+#include "Rock.h"
 
 Computer::Computer() : Player("Computer") {
-    this->move = 'R';
 }
 
-char Computer::makeMove() {
-    return move;
+Move* Computer::makeMove() {
+    return new Rock;
 }

@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+#pragma once
 
 class Move
 {
@@ -8,6 +9,7 @@ protected:
 public:
     virtual std::vector <std::string> getWeakness();
     virtual std::string getMove();
+    bool compareWeakness(std::string playerMove);
 };
 
 

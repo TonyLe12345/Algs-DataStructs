@@ -1,15 +1,12 @@
 #include "Move.h"
 #pragma once
 
-
-class Rock : public Move
+class Scissors : public Move
 {
 private:
     /* data */
 public:
-    Rock();
+    Scissors(/* args */);
     std::string getMove();
     std::vector <std::string> getWeakness();
 };
-
-
