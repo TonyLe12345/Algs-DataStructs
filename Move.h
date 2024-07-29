@@ -1,11 +1,13 @@
+#include <vector>
 #include <string>
 
 class Move
 {
-private:
+protected:
+    std::vector <std::string> weakness;
     std::string move;
 public:
-    virtual std::string makeMove();
-    void setMove(std::string move);
-    
+    virtual std::vector <std::string> getWeakness();
 };
+
+

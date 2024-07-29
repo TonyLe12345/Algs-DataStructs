@@ -7,6 +7,6 @@ private:
     
 public:
     Computer();
-    virtual Move* makeMove();
+    virtual char makeMove();
 };
 
