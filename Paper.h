@@ -8,6 +8,5 @@ private:
 public:
     Paper(/* args */);
     std::string getMove();
-    std::vector <std::string> getWeakness();
 };
 

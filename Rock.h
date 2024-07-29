@@ -9,7 +9,6 @@ private:
 public:
     Rock();
     std::string getMove();
-    std::vector <std::string> getWeakness();
 };
 
 

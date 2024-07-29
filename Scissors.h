@@ -8,5 +8,4 @@ private:
 public:
     Scissors(/* args */);
     std::string getMove();
-    std::vector <std::string> getWeakness();
 };

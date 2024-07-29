@@ -7,9 +7,9 @@ class Move
 protected:
     std::vector <std::string> weakness;
 public:
-    virtual std::vector <std::string> getWeakness();
-    virtual std::string getMove();
+    std::vector <std::string> getWeakness();
     bool compareWeakness(std::string playerMove);
+    virtual std::string getMove() = 0;
 };
 
 

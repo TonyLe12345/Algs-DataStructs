@@ -7,7 +7,7 @@
 int main() {
     Referee ref;
     Player* player1 = new Human("John");
-    Player* player2 = new Computer;
+    Player* player2 = new Human("Bob");
     Player* ptr = ref.refGame(player1, player2);
     if (ptr == nullptr) {
         std::cout << "It's a Tie." << std::endl;

@@ -8,3 +8,7 @@ bool Move::compareWeakness(std::string playerMove) {
     }
     return false;
 };
+
+std::vector <std::string> Move::getWeakness() {
+    return weakness;
+}
