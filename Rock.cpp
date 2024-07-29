@@ -4,6 +4,6 @@ Rock::Rock() {
     this->weakness.push_back("Paper");
 }
 
-std::string Rock::getMove() {
+std::string Rock::getName() {
     return "Rock";
 };

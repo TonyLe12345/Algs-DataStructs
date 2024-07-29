@@ -4,6 +4,6 @@ Scissors::Scissors() {
     this->weakness.push_back("Rock");
 }
 
-std::string Scissors::getMove() {
+std::string Scissors::getName() {
     return "Scissors";
 };

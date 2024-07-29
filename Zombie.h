@@ -7,6 +7,6 @@ private:
     /* data */
 public:
     Zombie(/* args */);
-    std::string getMove();
+    std::string getName();
 };
 

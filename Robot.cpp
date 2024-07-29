@@ -5,6 +5,6 @@ Robot::Robot() {
     this->weakness.push_back("Zombie");
 }
 
-std::string Robot::getMove() {
+std::string Robot::getName() {
     return "Robot";
 };

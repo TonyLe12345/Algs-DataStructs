@@ -6,8 +6,10 @@ class Ninja : public Move
 private:
     /* data */
 public:
-    Ninja(/* args */);
-    std::string getMove();
+    Ninja();
+    std::string getName();
 };
+
+
 
 

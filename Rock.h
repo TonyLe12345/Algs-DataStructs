@@ -8,7 +8,7 @@ private:
     /* data */
 public:
     Rock();
-    std::string getMove();
+    std::string getName();
 };
 
 

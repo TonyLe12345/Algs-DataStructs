@@ -7,5 +7,5 @@ private:
     /* data */
 public:
     Scissors(/* args */);
-    std::string getMove();
+    std::string getName();
 };

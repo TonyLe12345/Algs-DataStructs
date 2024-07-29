@@ -5,6 +5,6 @@ Pirate::Pirate() {
     this->weakness.push_back("Robot");
 }
 
-std::string Pirate::getMove() {
+std::string Pirate::getName() {
     return "Pirate";
 };

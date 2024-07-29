@@ -7,6 +7,6 @@ private:
     /* data */
 public:
     Paper(/* args */);
-    std::string getMove();
+    std::string getName();
 };
 

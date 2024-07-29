@@ -7,6 +7,6 @@ private:
     /* data */
 public:
     Monkey(/* args */);
-    std::string getMove();
+    std::string getName();
 };
 

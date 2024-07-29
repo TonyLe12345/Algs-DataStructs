@@ -9,7 +9,7 @@ protected:
 public:
     std::vector <std::string> getWeakness();
     bool compareWeakness(std::string playerMove);
-    virtual std::string getMove() = 0;
+    virtual std::string getName() = 0;
 };
 
 

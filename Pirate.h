@@ -7,5 +7,5 @@ private:
     /* data */
 public:
     Pirate(/* args */);
-    std::string getMove();
+    std::string getName();
 };

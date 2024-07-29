@@ -33,7 +33,7 @@ Move* Human::makeMove() {
     } else if (playerMove == "Pirate") {
         this->move = new Pirate;
         return move;
-    } else if (playerMove == "Scissors") {
+    } else if (playerMove == "Monkey") {
         this->move = new Monkey;
         return move;
     }

@@ -7,7 +7,7 @@ private:
     /* data */
 public:
     Robot(/* args */);
-    std::string getMove();
+    std::string getName();
 };
 
 

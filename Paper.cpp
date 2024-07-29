@@ -4,7 +4,7 @@ Paper::Paper() {
     this->weakness.push_back("Scissors");
 }
 
-std::string Paper::getMove() {
+std::string Paper::getName() {
     return "Paper";
 };
 

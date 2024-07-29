@@ -5,6 +5,6 @@ Monkey::Monkey() {
     this->weakness.push_back("Robot");
 }
 
-std::string Monkey::getMove() {
+std::string Monkey::getName() {
     return "Monkey";
 };
