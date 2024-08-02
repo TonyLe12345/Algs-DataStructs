@@ -1,12 +1,5 @@
 #include "Player.h"
-#include "Rock.h"
-#include "Paper.h"
-#include "Scissors.h"
-#include "Monkey.h"
-#include "Pirate.h"
-#include "Zombie.h"
-#include "Ninja.h"
-#include "Robot.h"
+#include "MoveCreator.h"
 #include <string>
 #pragma once
 
