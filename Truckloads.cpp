@@ -14,11 +14,15 @@ int Truckloads::numTrucks(int numCrates, int loadSize) {
     if (numCrates <= loadSize) {
         return 1;
     }
-    if (numCrates % 2 == 1) {
-        int crates = (numCrates-1) / 2;
-        return numTrucks(crates + 1, loadSize) + numTrucks(crates, loadSize);
-    } else {
-        int crates = numCrates / 2;
-        return numTrucks(crates, loadSize) + numTrucks(crates, loadSize);
-    }
+    // if (numCrates % 2 == 1) {
+    //     int crates = (numCrates-1) / 2;
+    //     return numTrucks(crates + 1, loadSize) + numTrucks(crates, loadSize);
+    // } else {
+    //     int crates = numCrates / 2;
+    //     return numTrucks(crates, loadSize) + numTrucks(crates, loadSize);
+    // }
+    
+    int halfofCrates = numCrates / 2;
+    int secondHalfofCrates = numCrates - halfofCrates;
+    return numTrucks(halfofCrates, loadSize) + numTrucks(secondHalfofCrates, loadSize);
 }
