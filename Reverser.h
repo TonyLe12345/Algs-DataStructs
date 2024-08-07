@@ -11,7 +11,7 @@ public:
 
 int Reverser::reverseDigit(int value) {
     
-    return 
+    return 0;
 }
 
 
