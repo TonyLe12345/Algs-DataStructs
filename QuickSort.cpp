@@ -11,30 +11,31 @@ void QuickSort::Quicklysort(std::vector<int> &list, int start, int end) {
     if (start >= end) {
         return;
     }
-    
-    int pivot_index = start;
-    int pivot = end;
 
+    int pivot_index = start;
+    
     if ((end - start) >= 3) {
-        pivot = start + 2;
+        int temp = list.at(start + 2);
+        list.at(start + 2) = list.at(end);
+        list.at(end) = temp;
     }
 
+    int pivot = list.at(end);
+    
+
     for (int i = start; i < end; i++) {
-        if (list.at(i) < list.at(pivot)) {
+        if (list.at(i) < pivot) {
             int temp = list.at(pivot_index);
             list.at(pivot_index) = list.at(i);
             list.at(i) = temp; 
             pivot_index++;
-
-            if (pivot_index == 3) {
-                pivot = i;
-            }
+ 
         }
     }
     
     int temp = list.at(pivot_index);
-    list.at(pivot_index) = list.at(pivot);
-    list.at(pivot) = temp;
+    list.at(pivot_index) = list.at(end);
+    list.at(end) = temp;
     
     Quicklysort(list, start, pivot_index - 1);
     Quicklysort(list, pivot_index + 1, end);

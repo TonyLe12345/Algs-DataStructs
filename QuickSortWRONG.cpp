@@ -16,7 +16,7 @@
 //     int pivot = end;
 
 //     if ((end - start) >= 3) {
-//         pivot = 3;
+//         pivot = start + 2;
 //     }
 
 //     for (int i = start; i < end; i++) {
