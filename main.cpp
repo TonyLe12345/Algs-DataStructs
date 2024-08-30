@@ -24,7 +24,7 @@ int main() {
     std::vector<int> vecto = Quickly->sort(vec);
 
     RecursiveBinarySearch detective;
-    bool boolean = detective.search(vec,1);
+    bool boolean = detective.search(vecto,1);
     if (boolean == 1) {
         std::cout<< "true ";
     } else {
