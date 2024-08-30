@@ -3,12 +3,22 @@
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
 #include <vector>
+#include <string>
+#include <sstream>
 #include <iostream>
 
 int main() {
-    std::vector<int> vec {1, 3, 5, 4, -5, 100, 7777, 2014};
-    // Sort* Bubble = new BubbleSort;
-    // std::vector<int> vect = Bubble->sort(vec);
+    std::string input;
+    std::vector<int> vec;
+
+    std::getline (std::cin, input);
+    std::istringstream my_stream(input);
+
+    int n;
+
+    while (my_stream >> n) {
+        vec.push_back(n);
+    }
 
     Sort* Quickly = new QuickSort;
     std::vector<int> vecto = Quickly->sort(vec);
