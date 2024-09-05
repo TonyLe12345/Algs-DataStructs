@@ -5,11 +5,22 @@ LinkedList::LinkedList() {
 }
 
 LinkedList::LinkedList(int* array, int len) {
-    for (int i=0; i<len; i++) {
+    Node* firstNode = new Node (array[0]); 
+    firstNode->setLink(nullptr);
+    this->head = firstNode;
+    
+    Node* currentNode = head;
+    for (int i=1; i<len; i++) {
         Node* newNode = new Node (array[i]); 
-        newNode->setLink(this->head);
-        this->head = newNode;
+        newNode->setLink(nullptr);
+        currentNode->setLink(newNode);
+        currentNode = currentNode->getLink();
     }
+    // for (int i=0; i<len; i++) {
+    //     Node* newNode = new Node (array[i]); 
+    //     newNode->setLink(this->head);
+    //     this->head = newNode;
+    // }
 }
 
 LinkedList::~LinkedList() {

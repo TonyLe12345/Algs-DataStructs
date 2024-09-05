@@ -1,6 +1,7 @@
 #include "Node.h"
 #include <limits>
 #include <iostream>
+#pragma once
 
 class LinkedList
 {
