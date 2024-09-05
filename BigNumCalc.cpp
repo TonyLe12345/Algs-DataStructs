@@ -8,12 +8,38 @@ std::list<int> BigNumCalc::buildBigNum(std::string numString) {
     return numlist;
 }
 std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2) {
+    int carry = 0;
+    std::list<int> numlist;
 
+    std::list<int>::iterator it1 = num1.begin();
+    std::list<int>::iterator it2 = num2.begin();
 
-    
+    for(; it1 != num1.end() && it2 != num2.end(); ++it1, ++it2) {
+        int number = *it1 + *it2 + carry;
+        numlist.push_front(number%10);
+        carry=(number-number%10)/10;
+    }
+    return numlist;
 }
 std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2) {
+    int carry = 0;
+    std::list<int> numlist;
+    
+    std::list<int>::iterator it1 = num1.begin();
+    std::list<int>::iterator it2 = num2.begin();
 
+    for(; it1 != num1.end() && it2 != num2.end(); ++it1, ++it2) {
+        if (*it1 - *it2 - carry < 0) {
+            int number = 10 + *it1 - *it2 - carry;
+            numlist.push_front(number);
+            carry = 1;
+        } else {
+            int number = *it1 - *it2 - carry;
+            numlist.push_front(number);
+            carry=0;
+        }
+    }
+    return numlist;
 }
 
 std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2) {
@@ -24,4 +50,5 @@ std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2) {
     numlist.push_front(number%10);
     carry=(number-number%10)/10;
     }
+    return numlist;
 }
