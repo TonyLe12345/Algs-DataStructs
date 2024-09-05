@@ -94,9 +94,11 @@ int LinkedList::search(int target) {
 void LinkedList::printList() {
     Node* currentNode = head;
     std::cout << "[";
+    std::cout << currentNode->getData();
+    currentNode = currentNode->getLink();
     while (currentNode != nullptr) {
         std::cout << " " << currentNode->getData();
         currentNode = currentNode->getLink();
     }
-    std::cout << " ]";
+    std::cout << "]" << std::endl;
 }
