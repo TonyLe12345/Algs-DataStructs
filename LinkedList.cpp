@@ -1,7 +1,7 @@
 #include "LinkedList.h"
 
 LinkedList::LinkedList() {
-    this->head == nullptr;
+    this->head = nullptr;
 }
 
 LinkedList::LinkedList(int* array, int len) {
@@ -61,8 +61,7 @@ int LinkedList::get(int pos) {
     Node* currentNode = head;
     for (int i = 1; i < pos; i++) {
         if (currentNode->getLink() == nullptr) {
-            std::numeric_limits < int >::max();
-            break;
+            return std::numeric_limits < int >::max();
         }
         currentNode = currentNode->getLink();
     }
@@ -75,6 +74,7 @@ int LinkedList::search(int target) {
         if (currentNode->getData() == target) {
             return index;
         }
+        currentNode = currentNode->getLink();
         index++;
     }
     return -1;
@@ -85,6 +85,7 @@ void LinkedList::printList() {
     std::cout << "[";
     while (currentNode != nullptr) {
         std::cout << " " << currentNode->getData();
+        currentNode = currentNode->getLink();
     }
     std::cout << " ]";
 }
