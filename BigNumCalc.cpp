@@ -1,4 +1,5 @@
 #include "BigNumCalc.h"
+#include <iostream>
 
 std::list<int> BigNumCalc::buildBigNum(std::string numString) {
     std::list<int> numlist;
@@ -17,7 +18,7 @@ std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2) {
     for(; it1 != num1.rend() && it2 != num2.rend(); ++it1, ++it2) {
         int number = *it1 + *it2 + carry;
         numlist.push_front(number%10);
-        carry = (number - (number%10)) / 10;
+        carry = number / 10;
     }
 
     return numlist;
