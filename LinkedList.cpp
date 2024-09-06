@@ -70,6 +70,9 @@ bool LinkedList::deletePosition(int pos) {
 
 int LinkedList::get(int pos) {
     Node* currentNode = head;
+    if (pos <= 0) {
+        return std::numeric_limits < int >::max();
+    }
     for (int i = 1; i < pos; i++) {
         if (currentNode == nullptr) {
             return std::numeric_limits < int >::max();
