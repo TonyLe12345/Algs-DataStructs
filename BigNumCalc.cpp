@@ -20,6 +20,9 @@ std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2) {
         numlist.push_front(number%10);
         carry = number / 10;
     }
+    if (carry!=0) {
+        numlist.push_front(carry);
+    }
 
     return numlist;
 }
