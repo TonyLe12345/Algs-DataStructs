@@ -10,15 +10,8 @@ private:
     Node *root;
 
 public:
-    Trie()
-    {
-        root = new Node("");
-    }
-
-
-    Node *getRoot() {
-        return root;
-    }
+    Trie();
+    Node *getRoot();
 };
 
 #endif
