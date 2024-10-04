@@ -1,10 +1,21 @@
 #include "Trie.h"
 
-Trie::Trie() {
-    root = new Node("");
+bool Node::isLetter(char letter){
+    return (children[letter - 'a'] != nullptr);
 }
 
+void Node::addNode(char letter){
+    children[letter - 'a'] = new Node();
+}
 
-Node * Trie::getRoot() {
-    return root;
+Node* Node::get(char letter){
+    return children[letter - 'a'];
+}
+
+void Node::setEnd(){
+    wordEnd = true;
+}
+
+bool Node::End(){
+    return wordEnd;
 }

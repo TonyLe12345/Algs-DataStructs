@@ -1,40 +1,46 @@
 #include "Autocomplete.h"
 
-Autocomplete::Autocomplete(/* args */) {
-    root = new Trie;
-}
-std::vector<std::string> Autocomplete::getSuggestions(std::string partialWord) {
-    Node* currentNode = root->getRoot();
-    for (int i = 0; i < partialWord.size(); i++) {
-        currentNode = currentNode->nextLetter(partialWord[i]);
-        if (currentNode == nullptr) {
-            return {};  // No suggestions if partial word not found
-        }
-    }
-    std::vector<std::string> suggestions;
-    findwords(currentNode, suggestions);
-    return suggestions;
-}  // return the known words that start with partialWord
-
-void findwords(Node* currentNode, std::vector<std::string>& suggestions) {
-    if (currentNode->returnEndWord()) {
-        suggestions.push_back(currentNode->returnData());
-    }
-
-    for (int i = 0; i < 26; i++) {
-        if (currentNode->nextLetter(i + 'a') != nullptr) {
-            findwords(currentNode->nextLetter(i + 'a'), suggestions);
-        }
-    }
+Autocomplete::Autocomplete() : root(new Node()) {
 }
 
 void Autocomplete::insert(std::string word) {
-    Node* currentNode = root->getRoot();
+    Node* node = root;
     for (int i = 0; i < word.size(); i++) {
-        if (currentNode->nextLetter(word[i]) == nullptr) {
-            currentNode->insert(word[i]);
+        char letter = word[i];
+        if (node->isLetter(letter) == false) {
+            node->addNode(letter);
         }
-        currentNode = currentNode->nextLetter(word[i]);
+        node = node->get(letter);
     }
-    currentNode->endWord();
-} // add a word to the known words
+    node->setEnd();
+}
+
+std::vector<std::string> Autocomplete::getSuggestions(std::string partialWord) {
+    std::vector<std::string> suggestions;
+    Node* node = root;
+
+    for (int i = 0; i < partialWord.size(); i++) {
+        char letter = partialWord[i];
+        if (node->isLetter(letter) == false) {
+            return suggestions;
+        }
+        node = node->get(letter);
+    }
+
+    findSuggestions(node, partialWord, suggestions);
+
+    return suggestions;
+}
+
+void Autocomplete::findSuggestions(Node* node, std::string current, std::vector<std::string>& suggestions) {
+    if (node->End()) {
+        suggestions.push_back(current);
+    }
+
+    for (int i = 0; i < 26; i++) {
+        char letter = 'a' + i;
+        if (node->isLetter(letter)) {
+            findSuggestions(node->get(letter), current + letter, suggestions);
+        }
+    }
+}

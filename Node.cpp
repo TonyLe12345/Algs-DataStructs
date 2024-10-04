@@ -4,9 +4,9 @@ Node::Node(std::string word) {
     this->data = word;
 };
 void Node::insert(char value) {
-    if (childNodes[value - 'a'] == nullptr) {  
+    if (childNodes[value] == nullptr) {  
     Node* newNode = new Node(data + value); 
-    childNodes[value - 'a'] = newNode;
+    childNodes[value] = newNode;
 }
 }
 std::string Node::returnData() {
@@ -20,5 +20,5 @@ bool Node::returnEndWord() {
     return wordEnd;
 }
 Node* Node::nextLetter(char letter) {
-    return childNodes[letter - 'a'];
+    return childNodes[letter];
 }

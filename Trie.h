@@ -1,18 +1,25 @@
-#ifndef TRIE
-#define TRIE
-#include "Node.h"
-
+#pragma once
+#include <iostream>
 #include <vector>
+#include <string>
+using namespace std;
 
-class Trie
-{
-private:
-    Node *root;
-
-public:
-    Trie();
-    Node *getRoot();
+struct Node{
+    Node* children[26];
+    bool wordEnd = false;
+    bool isLetter(char letter);
+    void addNode(char letter);
+    Node* get(char letter);
+    void setEnd();
+    bool End();
 };
 
-#endif
+class Trie{
+    private:
+        Node* root;
+    public:
+        Trie();
+        void insert(string value);
+        bool search(string value);
+};
 
