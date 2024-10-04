@@ -1,10 +1,10 @@
 #pragma once
 #include <string>
 
-struct TrieNode {
-    TrieNode* children[2];
+struct trieNode {
+    trieNode* children[2];
     int routerNum;
-    TrieNode();
+    trieNode();
 };
 
 class PrefixMatcher {
@@ -14,6 +14,6 @@ public:
     int selectRouter(std::string networkAddress);
 
 private:
-    TrieNode* root;
+    trieNode* root;
 };
 
