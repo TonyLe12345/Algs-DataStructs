@@ -161,9 +161,8 @@ class Heap {
         // Remove an element from the heap
         void remove(T value) {
             heapIndex index;
-            for(int i = 1; i < this->tree.size(); i++) {
-                if(this->tree.at(i) == value) {
-                    index = i;
+            for(index = 1; index < this->tree.size(); index++) {
+                if(this->tree.at(index) == value) {
                     break;
                 }
             }
