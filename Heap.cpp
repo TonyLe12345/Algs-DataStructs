@@ -153,16 +153,28 @@ class Heap {
         // TO BE IMPLEMENTED
         // Insert an element into the heap
         void insert(T element) {
+            this->tree.push_back(element);
+            heapsort(tree);
         }
         
         // TO BE IMPLEMENTED
         // Remove an element from the heap
         void remove(T value) {
+            heapIndex index;
+            for(index = 1; index < this->tree.size(); index++) {
+                if(this->tree.at(index) == value) {
+                break;
+                }
+            }
+            std::swap(this->tree.at(index), this->tree.at(this->tree.size() - 1));
+            this->tree.pop_back();
+            heapsort(tree);
         }
         
         // TO BE IMPLEMENTED
         // Get the minimum element (in this case, the minimum element of the min-heap)
         T getMin() {
+            return this->tree.at(1);
         }
 };
 
