@@ -163,12 +163,12 @@ class Heap {
             heapIndex index;
             for(index = 1; index < this->tree.size(); index++) {
                 if(this->tree.at(index) == value) {
-                    break;
+                break;
                 }
             }
             std::swap(this->tree.at(index), this->tree.at(this->tree.size() - 1));
             this->tree.pop_back();
-            this->heapify(tree);
+            heapify(tree);
         }
         
         // TO BE IMPLEMENTED
