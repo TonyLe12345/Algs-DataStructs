@@ -154,7 +154,7 @@ class Heap {
         // Insert an element into the heap
         void insert(T element) {
             this->tree.push_back(element);
-            heapsort(tree);
+            heapSort(tree);
         }
         
         // TO BE IMPLEMENTED
@@ -168,7 +168,7 @@ class Heap {
             }
             std::swap(this->tree.at(index), this->tree.at(this->tree.size() - 1));
             this->tree.pop_back();
-            heapsort(tree);
+            heapSort(tree);
         }
         
         // TO BE IMPLEMENTED
