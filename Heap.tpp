@@ -155,21 +155,22 @@ class Heap {
         void insert(T element) {
             this->tree.push_back(element);
             std::swap(this->tree.at(1), this->tree.at(this->tree.size() - 1));
-            this->heapifyDown(1);
+            this->heapify(tree);
         }
         
         // TO BE IMPLEMENTED
         // Remove an element from the heap
         void remove(T value) {
             heapIndex index;
-            for(index = 1; index < this->tree.size(); index++) {
+            for(int i = 1; index < this->tree.size(); index++) {
                 if(this->tree.at(index) == value) {
-                break;
+                    index = i;
+                    break;
                 }
             }
             std::swap(this->tree.at(index), this->tree.at(this->tree.size() - 1));
             this->tree.pop_back();
-            this->heapifyDown(index);
+            this->heapify(tree);
         }
         
         // TO BE IMPLEMENTED
