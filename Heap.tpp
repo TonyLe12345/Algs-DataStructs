@@ -160,7 +160,7 @@ class Heap {
         // TO BE IMPLEMENTED
         // Remove an element from the heap
         void remove(T value) {
-            int index;
+            heapIndex index;
             for(int i = 1; i < this->tree.size(); i++) {
                 if(this->tree.at(i) == value) {
                     index = i;
