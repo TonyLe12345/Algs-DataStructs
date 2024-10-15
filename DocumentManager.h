@@ -1,6 +1,7 @@
 #include <string>
 #include "document.h"
 #include <map>
+#pragma once
 
 class DocumentManager
 {

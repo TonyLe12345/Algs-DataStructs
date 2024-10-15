@@ -4,11 +4,11 @@ DocumentManager::DocumentManager(/* args */) {
 }
 
 void DocumentManager::addDocument(std::string name, int id, int license_limit) {
-    Documents[id] = document(name, id, license_limit);
+    Documents.insert(std::make_pair(id, document(name, id, license_limit)));
 }
 
 void DocumentManager::addPatron(int patronID) {
-    Patrons[patronID] = patronID;
+    Patrons.insert(std::make_pair(patronID, patronID));
 }
 int DocumentManager::search(std::string name) {
     for (std::map<int, document>::iterator it=Documents.begin(); it!=Documents.end(); ++it) {

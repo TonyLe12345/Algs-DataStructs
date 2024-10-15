@@ -1,11 +1,13 @@
 #include <string>
+#pragma once
+
 class document
 {
 private:
     std::string name;
     int id;
     int license_limit;
-    int borrowNum = 0;
+    int borrowNum;
 public:
     document(std::string name, int id, int license_limit);
     std::string getName();
